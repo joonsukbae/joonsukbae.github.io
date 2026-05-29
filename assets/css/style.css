@@ -297,7 +297,7 @@ section + section {
   grid-template-columns: 1fr auto;
   gap: var(--s-4);
   align-items: baseline;
-  padding: var(--s-3) 0;
+  padding: var(--s-4) 0;
   border-bottom: 1px solid var(--c-rule);
 }
 .row:last-child { border-bottom: none; }
@@ -306,19 +306,29 @@ section + section {
   color: var(--c-ink-3);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
+  padding-top: 0.18em;
 }
-.row .what { font-size: var(--fs-base); }
-.row .what em { font-style: italic; }
-.row .what .where {
-  font-weight: 500;
+.row .what { font-size: var(--fs-base); line-height: 1.45; }
+.row .what em { font-style: italic; color: var(--c-ink-2); }
+/* When a .kind tag precedes the title <em>, drop the title onto its own line */
+.row .what .kind + em,
+.row .what .kind ~ em {
+  display: block;
+  margin-top: var(--s-1);
+  font-size: var(--fs-sm);
 }
+.row .what .where { font-weight: 500; }
+.row .what .where a,
+.row .what a .where { color: inherit; }
 .row .what .kind {
   display: inline-block;
   font-size: var(--fs-xs);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--c-ink-3);
-  margin-left: var(--s-2);
+  margin-left: var(--s-3);
+  padding-left: var(--s-3);
+  border-left: 1px solid var(--c-rule);
 }
 
 /* ---------- Publications ---------- */
@@ -374,47 +384,101 @@ section + section {
   color: var(--c-ink-2);
   font-style: italic;
 }
-.pub .tag {
+.pub .tag,
+.role .tag {
   display: inline-block;
   font-size: var(--fs-xs);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--c-accent);
+  color: var(--c-ink-3);
   margin-right: var(--s-3);
+  padding-right: var(--s-3);
+  border-right: 1px solid var(--c-rule);
 }
+.tag-lead { color: var(--c-accent); }
 
 /* ---------- Hero (home) ---------- */
 .hero {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--s-6);
-  margin-bottom: var(--s-8);
+  margin-bottom: var(--s-9);
+  padding-top: var(--s-3);
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .hero {
-    grid-template-columns: minmax(0, 1fr) 200px;
+    grid-template-columns: minmax(0, 1fr) 220px;
     gap: var(--s-8);
     align-items: start;
   }
+  .hero:not(:has(.portrait)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
-.hero h1 { margin-bottom: var(--s-3); }
-.hero .role {
-  font-size: var(--fs-md);
-  color: var(--c-ink-2);
+.hero .kicker {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  margin-bottom: var(--s-4);
+}
+.hero h1 {
   margin-bottom: var(--s-5);
-  max-width: 38em;
+  font-size: var(--fs-2xl);
+}
+@media (min-width: 700px) {
+  .hero h1 { font-size: var(--fs-3xl); }
+}
+.hero .lede {
+  margin-bottom: var(--s-6);
+  max-width: 36em;
 }
 .hero .portrait {
-  aspect-ratio: 4/5;
-  background: var(--c-rule);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c-ink-3);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  margin: 0;
 }
+.hero .portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(8%);
+}
+
+/* Definition list — used on home "Now" */
+.dl {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+}
+.dl dt {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  padding-top: var(--s-4);
+  margin-top: var(--s-4);
+  border-top: 1px solid var(--c-rule);
+}
+.dl dt:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+.dl dd {
+  margin: var(--s-2) 0 0 0;
+  max-width: 60ch;
+  color: var(--c-ink);
+}
+
+/* Skip-link */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--c-ink);
+  color: var(--c-paper);
+  font-size: var(--fs-sm);
+}
+.skip:focus { left: 1rem; top: 1rem; z-index: 100; }
 
 /* ---------- Quick links cluster ---------- */
 .quick {
