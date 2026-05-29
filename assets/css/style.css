@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
   --c-paper: #fafaf7;
   --c-ink:   #1a1a1a;
   --c-ink-2: #4a4a48;     /* secondary text */
-  --c-ink-3: #8a8a86;     /* tertiary, captions */
+  --c-ink-3: #6f6f6a;     /* tertiary captions; ≥4.5:1 contrast on paper */
   --c-rule:  #e5e3dc;     /* hairlines */
   --c-rule-2:#d4d1c8;     /* slightly stronger rule */
   --c-accent:#9b2c2c;     /* hanko red, used only on hover/marker */
