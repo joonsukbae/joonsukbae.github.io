@@ -1,0 +1,5 @@
+REPLACE THIS FILE.
+
+Drop a portrait photo here as `assets/img/headshot.jpg` (or .webp/.png).
+Recommended: 800x1000 px, neutral background, soft window light.
+Then update the hero block in /index.html to swap the .portrait div for an <img>.

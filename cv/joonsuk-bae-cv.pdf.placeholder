@@ -1,0 +1,8 @@
+REPLACE THIS FILE.
+
+Compile /Users/js/Library/Mobile Documents/com~apple~CloudDocs/Lab./CV/source/main.tex
+and copy the resulting PDF here as `joonsuk-bae-cv.pdf`.
+
+  cd "/Users/js/Library/Mobile Documents/com~apple~CloudDocs/Lab./CV/source"
+  latexmk -pdf main.tex
+  cp main.pdf "/Users/js/personal/joonsukbae.github.io/cv/joonsuk-bae-cv.pdf"
