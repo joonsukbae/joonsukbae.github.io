@@ -36,7 +36,8 @@
         <div class="label">Programme&nbsp;01</div>
         <div class="prose col">
           <h2>ALICE Run&nbsp;3 charged-particle jets</h2>
-          <p>I am the <strong>lead analyzer</strong> of the first ALICE Run&nbsp;3 charged-particle jet measurement (in preparation, target 2026): <em>R-dependent charged-particle jet production in pp at &radic;<i>s</i>&thinsp;=&thinsp;13.6&nbsp;TeV with ALICE</em>. The analysis spans the full chain &mdash; detector-level QA on continuous-readout data, jet reconstruction in O<sup>2</sup>Physics, response-matrix building, Bayesian / SVD unfolding, and a complete systematic-uncertainty programme covering tracking effects and unfolding stability. Preliminary results are PWG-JE approved.</p>
+          <p>I am the <strong>main analyzer</strong> of the first ALICE Run&nbsp;3 inclusive charged-particle jet cross-section measurement (in preparation, target 2026): <em>R-dependent charged-particle jet production in pp at &radic;<i>s</i>&thinsp;=&thinsp;13.6&nbsp;TeV with ALICE</em>. The analysis spans the full chain &mdash; detector-level QA on continuous-readout data, jet reconstruction in O<sup>2</sup>Physics, response-matrix building, Bayesian / SVD unfolding, and a complete systematic-uncertainty programme covering tracking effects and unfolding stability. Preliminary results are PWG-JE-approved; presented on behalf of ALICE at EPS-HEP 2025 (PWG-JE merge talk).</p>
+          <p>The physics motivation behind varying the jet radius <i>R</i> from 0.2 to 0.6: probing the balance between collinear (small-<i>R</i>) and large-angle/non-perturbative (large-<i>R</i>) emissions at <i>p</i><sub>T</sub> in a regime where MC tunes disagree, and providing the pp baseline for forthcoming O&ndash;O / Ne&ndash;Ne running where energy-loss searches in small systems become accessible.</p>
           <p>I established the Run&nbsp;3-specific cross-section normalization based on the TVX visible cross section under continuous readout, and wrote <code>jetCrossSectionEfficiency.cxx</code> (the O<sup>2</sup>Physics task used by all PWG-JE Run&nbsp;3 charged-jet analyses for normalization).</p>
         </div>
       </div>
@@ -58,7 +59,7 @@
         <div class="label">Programme&nbsp;03</div>
         <div class="prose col">
           <h2>ePIC Barrel Imaging Calorimeter (BIC)</h2>
-          <p>I am the <strong>lead analyzer</strong> for the on-site prompt and follow-up offline analysis of the CERN PS T10 (2025.07) Pb/scintillating-fiber beam-test paper (in preparation, 2026), and a co-author on the first beam-test paper (submitted to <em>Nucl. Instrum. Meth. A</em>, NIMA-D-26-00482; also submitted to JKPS; arXiv preprint posted).</p>
+          <p>I am the <strong>lead offline analyst</strong> for the CERN PS T10 (2025.07) Pb/scintillating-fiber beam-test paper (in preparation, 2026), responsible for on-site prompt analysis and follow-up offline reconstruction. I am a co-author on the first beam-test paper, with module-construction support and PMT/module performance characterization roles (submitted to <em>Nucl. Instrum. Meth. A</em>, NIMA-D-26-00482; also submitted to JKPS; arXiv preprint posted).</p>
           <p>Earlier hardware work: PMT&ndash;module QA prior to the test beams &mdash; signal characterization with cosmic-ray and radioactive-source data, timing-coincidence checks, optical-coupling stability, per-module acceptance criteria. On the simulation/reconstruction side I lead JANA2 / EIC-recon studies determining energy- and <i>&eta;</i>-dependent sampling fractions and contribute Geant4 prototype modeling.</p>
         </div>
       </div>
@@ -69,11 +70,11 @@
         <div class="label">Software</div>
         <div class="prose col">
           <h2>ALICE O<sup>2</sup>Physics framework</h2>
-          <p>I have contributed 35 pull requests (19 merged) to <a href="https://github.com/AliceO2Group/O2Physics">AliceO2Group/O2Physics</a> since 2023, covering jet finding, response matrices, systematic-uncertainty pipelines, hadronic-rate fixes, and central reconstruction.</p>
+          <p>I have contributed 37 pull requests (18 merged) to <a href="https://github.com/AliceO2Group/O2Physics">AliceO2Group/O2Physics</a> since 2023, covering jet finding, response matrices, systematic-uncertainty pipelines, hadronic-rate fixes, and central reconstruction.</p>
           <ul class="list list-tight">
-            <li><strong>Central framework patch</strong> in <code>Common/</code> (<a href="https://github.com/AliceO2Group/O2Physics/pull/15174">PR #15174</a>, merged): fixed stale <i>Q/p</i><sub>T</sub> values in graph-based TrackTuner momentum smearing &mdash; affects tracking systematics for all downstream analyses using TrackTuner.</li>
-            <li><strong>Sole author of</strong> <code>jetCrossSectionEfficiency.cxx</code> (<a href="https://github.com/AliceO2Group/O2Physics/pull/14057">PR #14057</a>, merged): the PWG-JE task used by all Run&nbsp;3 charged-jet analyses for cross-section normalization at particle level.</li>
-            <li>Code review on 5 community pull requests across PWG-JE and Common.</li>
+            <li><strong>Central-framework patch</strong> in <code>Common/Tools</code> (<a href="https://github.com/AliceO2Group/O2Physics/pull/15174">PR #15174</a>, merged): fixed stale <i>Q/p</i><sub>T</sub> values in the graph-based TrackTuner momentum-smearing path.</li>
+            <li><strong>Author of</strong> <code>jetCrossSectionEfficiency.cxx</code> (<a href="https://github.com/AliceO2Group/O2Physics/pull/14057">PR #14057</a>, merged): the PWG-JE task adopted across Run&nbsp;3 charged-jet analyses for cross-section normalization at particle level.</li>
+            <li>Code review on community pull requests across PWG-JE and Common.</li>
           </ul>
         </div>
       </div>
@@ -86,7 +87,7 @@
           <h2>What I am thinking about</h2>
           <ul class="list list-tight">
             <li>Jet production and non-perturbative QCD: observables sensitive to hadronization and soft physics.</li>
-            <li>Jet substructure as a probe for quenching-like signatures in high-multiplicity pp and light-ion (OO, Ne&ndash;Ne) systems.</li>
+            <li>Groomed jet substructure (Soft Drop <i>z<sub>g</sub></i>, primary Lund-plane density) in high-multiplicity pp and the forthcoming O&ndash;O / Ne&ndash;Ne running &mdash; as a search for energy-loss signatures in small systems.</li>
             <li>Initial-state effects and CGC-inspired frameworks for interpreting small-system jet measurements.</li>
             <li>Detector R&amp;D and performance characterization through test-beam data and simulation.</li>
           </ul>
