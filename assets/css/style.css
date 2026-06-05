@@ -580,14 +580,34 @@ a.cta {
   line-height: 1.4;
 }
 
-/* Long-token wrap — prevent 320px horizontal scroll on code spans, DOIs, URLs */
-body, .pub .ptitle, .dl dd, code, .entry .title {
-  overflow-wrap: anywhere;
-}
+/* Long-token wrap — scoped to long-content nodes only.
+   Body uses break-word (safer); explicit nodes get anywhere (DOIs, code, file paths). */
+body { overflow-wrap: break-word; }
+.pub .ptitle, .dl dd, code, .entry .title { overflow-wrap: anywhere; }
 
 /* Mobile gutter reduction */
 @media (max-width: 480px) {
   .page { padding: var(--s-5) var(--s-4) var(--s-7); }
+}
+
+/* Header alignment fix — with 44px nav tap targets, baseline drifts.
+   Switch to center at desktop where header is horizontal flex. */
+@media (min-width: 700px) {
+  .site-header { align-items: center; }
+}
+
+/* Stack .row on narrow viewports to give the title full width */
+@media (max-width: 420px) {
+  .row { grid-template-columns: 1fr; gap: var(--s-1); }
+  .row .when { padding-top: 0; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
 /* Keyboard focus on nav links */
@@ -604,12 +624,7 @@ body, .pub .ptitle, .dl dd, code, .entry .title {
 .quick a:visited,
 .row .what a:visited { color: var(--c-ink-2); }
 
-/* Contact .entry .sub helper */
-.entry .sub {
-  color: var(--c-ink-3);
-  font-size: var(--fs-sm, 0.9rem);
-  margin-top: 0.2em;
-}
+/* .entry .sub helper — defined once at style.css:284, no duplicate needed */
 
 /* ==========================================================================
    Print stylesheet — academic CV-adjacent site
