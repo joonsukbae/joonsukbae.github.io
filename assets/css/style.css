@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
   --c-paper: #fafaf7;
   --c-ink:   #1a1a1a;
   --c-ink-2: #4a4a48;     /* secondary text */
-  --c-ink-3: #6f6f6a;     /* tertiary captions; ≥4.5:1 contrast on paper */
+  --c-ink-3: #5e5e59;     /* tertiary captions; AA contrast (≥4.5:1) on paper */
   --c-rule:  #e5e3dc;     /* hairlines */
   --c-rule-2:#d4d1c8;     /* slightly stronger rule */
   --c-accent:#9b2c2c;     /* hanko red, used only on hover/marker */
@@ -71,7 +71,7 @@ a { color: inherit; text-decoration: none; }
     --c-paper: #0e0e0d;
     --c-ink:   #ebe9e1;
     --c-ink-2: #b6b4ac;
-    --c-ink-3: #7a7872;
+    --c-ink-3: #8d8b84;     /* AA contrast on dark paper */
     --c-rule:  #2a2925;
     --c-rule-2:#3a3833;
     --c-accent:#c97070;
@@ -555,8 +555,107 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* Print */
+/* ==========================================================================
+   Accessibility & polish (post 10-agent homepage audit, 2026-06-06)
+   ========================================================================== */
+
+/* Touch targets — 44x44 minimum on tap surfaces. WCAG 2.5.5 */
+.nav { gap: var(--s-3) var(--s-5); }
+.nav a {
+  display: inline-block;
+  padding: 10px 4px;
+  min-height: 44px;
+  line-height: 1.4;
+}
+.quick a {
+  display: inline-block;
+  padding: 8px 2px;
+  min-height: 44px;
+  line-height: 1.4;
+}
+a.cta {
+  display: inline-block;
+  padding: 0.55em 1.0em;
+  min-height: 44px;
+  line-height: 1.4;
+}
+
+/* Long-token wrap — prevent 320px horizontal scroll on code spans, DOIs, URLs */
+body, .pub .ptitle, .dl dd, code, .entry .title {
+  overflow-wrap: anywhere;
+}
+
+/* Mobile gutter reduction */
+@media (max-width: 480px) {
+  .page { padding: var(--s-5) var(--s-4) var(--s-7); }
+}
+
+/* Keyboard focus on nav links */
+.nav a:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Visited links — stay in neutral, never accent */
+.prose a:visited,
+.entry a:visited,
+.pub .links a:visited,
+.quick a:visited,
+.row .what a:visited { color: var(--c-ink-2); }
+
+/* Contact .entry .sub helper */
+.entry .sub {
+  color: var(--c-ink-3);
+  font-size: var(--fs-sm, 0.9rem);
+  margin-top: 0.2em;
+}
+
+/* ==========================================================================
+   Print stylesheet — academic CV-adjacent site
+   ========================================================================== */
 @media print {
-  .nav, .site-footer { display: none; }
-  body { background: white; color: black; }
+  @page { margin: 18mm; }
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+  .skip, .nav, .site-footer, .cta { display: none; }
+  .page { max-width: none; padding: 0; }
+  .site-header {
+    border-bottom: 1px solid #000;
+    margin-bottom: 1.2em;
+    padding-bottom: 0.5em;
+  }
+  .brand { font-size: 14pt; }
+  .brand .mark { background: #000; }
+  h1 { font-size: 18pt; }
+  h2 { font-size: 13pt; }
+  h3 { font-size: 11pt; }
+  section + section {
+    border-top: 1px solid #999;
+    margin-top: 1.2em;
+    padding-top: 1em;
+  }
+  .grid { display: block; }
+  .label { font-size: 8pt; margin-bottom: 0.3em; }
+  a {
+    color: #000;
+    text-decoration: underline;
+    border-bottom: none !important;
+  }
+  a[href^="http"]::after,
+  a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #444;
+    word-break: break-all;
+  }
+  a[href^="/"]::after,
+  a[href^="#"]::after { content: ""; }
+  .pub, .row, .dl dt { page-break-inside: avoid; }
+  h1, h2, h3 { page-break-after: avoid; }
+  img { max-width: 100%; }
 }
