@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research — Joonsuk Bae</title>
+  <meta name="description" content="ALICE Run 3 charged-particle jet cross sections (pp 13.6 TeV), PWG-JE tracking-efficiency systematics for Hard Probes 2026, ePIC Barrel Imaging Calorimeter R&D, and O2Physics framework contributions.">
+  <meta name="author" content="Joonsuk Bae">
+  <link rel="canonical" href="https://joonsukbae.com/research/">
+  <meta property="og:title" content="Research — Joonsuk Bae">
+  <meta property="og:description" content="ALICE Run 3 jets, PWG-JE tracking systematics, ePIC BIC calorimetry, O2Physics contributions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://joonsukbae.com/research/">
+  <meta property="og:site_name" content="Joonsuk Bae">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Research — Joonsuk Bae">
+  <meta name="twitter:description" content="ALICE Run 3 jets, PWG-JE tracking systematics, ePIC BIC calorimetry, O2Physics contributions.">
+  <meta name="theme-color" content="#fafaf7">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fafaf7'/%3E%3Crect x='12' y='12' width='8' height='8' fill='%239b2c2c'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page">
+
+  <header class="site-header">
+    <div class="brand">
+      <a href="/"><span class="mark" aria-hidden="true"></span>Joonsuk&nbsp;Bae</a>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/research/" class="is-current">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/talks/">Talks</a>
+      <a href="/cv/">CV</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <h1>Research</h1>
+    <p class="lede">My work spans ALICE Run&nbsp;3 jet physics, central-framework software contributions to O<sup>2</sup>Physics, PWG-JE tracking-efficiency systematics for Hard Probes 2026, and Pb/scintillating-fiber calorimetry R&amp;D for the ePIC Barrel Imaging Calorimeter at the Electron&ndash;Ion Collider.</p>
+
+    <section>
+      <div class="grid">
+        <div class="label">Program&nbsp;01</div>
+        <div class="prose col">
+          <h2>ALICE Run&nbsp;3 charged-particle jets</h2>
+          <p>I am the <strong>primary analyzer</strong> of the first ALICE Run&nbsp;3 inclusive charged-particle jet cross-section measurement (in preparation, target 2026; paper proposal August&nbsp;2026): <em>R-dependent charged-particle jet production in pp at &radic;<i>s</i>&thinsp;=&thinsp;13.6&nbsp;TeV with ALICE</em>. The analysis spans the full chain &mdash; detector-level QA on continuous-readout data, jet reconstruction in O<sup>2</sup>Physics, response-matrix building, Bayesian / SVD unfolding, and a complete systematic-uncertainty program covering tracking effects and unfolding stability. Preliminary results are PWG-JE-approved; presented on behalf of ALICE at EPS-HEP&nbsp;2025 (PWG-JE merge talk).</p>
+          <p>The physics motivation behind varying the jet radius <i>R</i> from 0.2 to 0.6: probing the balance between collinear (small-<i>R</i>) and large-angle/non-perturbative (large-<i>R</i>) emissions across the <i>p</i><sub>T</sub> range where modern parton-shower MC tunes disagree, and providing the pp baseline for the 2025 O+O / Ne+Ne running where energy-loss searches in small systems become accessible.</p>
+          <p>I established the Run&nbsp;3-specific cross-section normalization based on the TVX visible cross section under continuous readout, and authored the PWG-JE cross-section normalization framework now used by the SKKU Run&nbsp;3 charged-jet analyses (pp 13.6&nbsp;TeV and O+O).</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <div class="label">Program&nbsp;02</div>
+        <div class="prose col">
+          <h2>Tracking-efficiency systematics for Hard Probes 2026</h2>
+          <p>I contributed the pp &radic;<i>s</i>&thinsp;=&thinsp;13.6&nbsp;TeV total charged-particle tracking-efficiency systematic (~1.5% across the dominant <i>p</i><sub>T</sub> range; <i>p</i><sub>T</sub>-binned) for the PWG-JE Hard Probes&nbsp;2026 preparation, including extension to the 2022, 2023, and 2024 periods. My ITS-TPC matching code was reused by a PWG-JE colleague as a starting point for PbPb tracking studies.</p>
+          <p>Related Run&nbsp;3 understanding: trigger-level inefficiencies introduced by the continuous-readout TPC and asynchronous reconstruction; track-<i>p</i><sub>T</sub> resolution studies (covariance-matrix propagation, MC residuals, V0 mass resolution) feeding a <i>p</i><sub>T</sub>-dependent track momentum-resolution smearing used for charged-jet systematic studies in Run&nbsp;3.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <div class="label">Program&nbsp;03</div>
+        <div class="prose col">
+          <h2>ePIC Barrel Imaging Calorimeter (BIC)</h2>
+          <p>I work across two 2025 test-beam campaigns of the Pb/scintillating-fiber prototype: <strong>KEK AF&ndash;AR</strong> (2025.03; on-site DAQ shifter, equalization, prompt analysis; co-author on the KEK paper in preparation) and <strong>CERN PS T10</strong> (2025.07; lead offline analyst; paper in preparation, 2026, covering energy response, resolution, and linearity). I am a co-author on the first beam-test paper, with module-construction support and PMT/module performance characterization roles (submitted to <em>Nucl. Instrum. Meth. A</em>, NIMA-D-26-00482; arXiv preprint posted; companion JKPS submission).</p>
+          <p>Earlier hardware work: PMT&ndash;module QA prior to the test beams &mdash; signal characterization with cosmic-ray and radioactive-source data, timing-coincidence checks, optical-coupling stability, applied per-module acceptance criteria. On the simulation/reconstruction side I contribute energy- and <i>&eta;</i>-dependent sampling-fraction studies in JANA2 / EIC-recon and Geant4 prototype modeling for the Korea-BIC software effort.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <div class="label">Software</div>
+        <div class="prose col">
+          <h2>ALICE O<sup>2</sup>Physics framework</h2>
+          <p>I have contributed 37 pull requests (18 merged) to <a href="https://github.com/AliceO2Group/O2Physics">AliceO2Group/O2Physics</a> since 2023, covering jet finding, response matrices, systematic-uncertainty pipelines, hadronic-rate fixes, and central reconstruction.</p>
+          <ul class="list list-tight">
+            <li><strong>Authored</strong> the PWG-JE cross-section normalization framework used by the SKKU Run&nbsp;3 charged-jet analyses (pp 13.6&nbsp;TeV and O+O; merged).</li>
+            <li><strong>Merged</strong> a central-framework fix to the track momentum-resolution smearing methodology shared across analyses.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <div class="label">Mentoring &amp; community</div>
+        <div class="prose col">
+          <h2>Teaching, mentoring, and service</h2>
+          <ul class="list list-tight">
+            <li><strong>Co-mentor</strong> of two MSc co-analyzers on the ALICE Run&nbsp;3 O&ndash;O charged-jet measurement (SKKU, 2025&ndash;present): O<sup>2</sup>Physics onboarding, jet reconstruction methodology, response-matrix workflow, and systematic-uncertainty estimation; co-author with W.&nbsp;Ham on the corresponding PWG-JE Analysis Note.</li>
+            <li><strong>Co-organizer and instructor</strong>, <a href="https://indico.cern.ch/event/1361235/">KoALICE O<sup>2</sup> Tutorial</a> (SKKU, 2024.01; with H.&nbsp;Lee) &mdash; two-day Run&nbsp;3 analysis-framework tutorial for the Korean ALICE community (~22 participants from SKKU, Inha University, and other Korean institutes); instructor on <em>Running O<sup>2</sup>Physics with Hyperloop</em> (solo) and on <em>Practical PWG-JE tasks</em>.</li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <div class="label">Interests</div>
+        <div class="prose col">
+          <h2>What I am thinking about</h2>
+          <ul class="list list-tight">
+            <li>Whether jet quenching is present in small systems &mdash; an open question the 2025 O+O / Ne+Ne running can now address directly.</li>
+            <li>Radial, bias-robust substructure (jet shape <i>&rho;(r)</i>, fragmentation function <i>D(z)</i>) as observables that make selection bias directly testable, rather than groomed substructure which remains hard to interpret as a medium signature.</li>
+            <li>Photon-tagged jets as a cleaner recoil probe &mdash; <i>&gamma;</i>-tagged <i>&rho;(r)</i> in small systems and <i>&gamma;</i>+jet <i>&Delta;&phi;</i> acoplanarity / <i>&gamma;</i>+jet correlations in Pb+Pb for medium-induced <i>k</i><sub>T</sub> broadening and the diffusion-wake search.</li>
+            <li>ML methods (OmniFold-style unfolding) that preserve correlations and control bias when extracting weak high-dimensional signals.</li>
+            <li>Detector R&amp;D and performance characterization through test-beam data and simulation, including the ePIC Barrel Imaging Calorimeter.</li>
+          </ul>
+          <p style="margin-top: var(--s-5);"><a href="/publications/">Selected publications &rarr;</a> &nbsp; <a href="/talks/">Recent talks &rarr;</a> &nbsp; <a href="/cv/joonsuk-bae-cv.pdf">CV (PDF) &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>&copy; 2026 Joonsuk Bae</div>
+    <div>Last updated Jun&nbsp;2026</div>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a41907a581c04b09b77e31707e499f1d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
