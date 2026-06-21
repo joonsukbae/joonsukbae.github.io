@@ -283,6 +283,17 @@ a:hover { text-decoration-color: var(--signal); }
   letter-spacing: 0.08em;
   font-weight: 500;
 }
+.artifact__interp {
+  font-family: var(--f-body);
+  font-size: 14.5px;
+  line-height: 1.55;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+  max-width: 64ch;
+}
 
 /* ----------------------------------------------------------------
    sidebar / meta-block (shared right column)
