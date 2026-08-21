@@ -99,9 +99,8 @@
       </div>
       <div class="section__body">
         <p>I contributed the pp √<span class="var">s</span>&nbsp;=&nbsp;13.6&nbsp;TeV
-        total charged-particle tracking-efficiency systematic (~1.5% across
-        the dominant <span class="var">p</span><sub>T</sub> range;
-        <span class="var">p</span><sub>T</sub>-binned) for the PWG-JE Hard
+        total charged-particle tracking-efficiency systematic
+        (<span class="var">p</span><sub>T</sub>-binned) for the PWG-JE Hard
         Probes&nbsp;2026 preparation, including extension to the 2022, 2023,
         and 2024 periods. My ITS-TPC matching code was reused by a PWG-JE
         colleague as a starting point for PbPb tracking studies.</p>
@@ -118,7 +117,7 @@
       <aside class="section__meta meta-block">
         <div class="meta-block__label">Systematic</div>
         <dl>
-          <dt>Tracking</dt><dd>~1.5% total</dd>
+          <dt>Scope</dt><dd>pp 13.6 TeV lead</dd>
           <dt>Coverage</dt><dd>2022 · 23 · 24 periods</dd>
           <dt>Method</dt><dd>ITS-TPC matching</dd>
           <dt>Reuse</dt><dd>PbPb adaptation</dd>
@@ -213,7 +212,41 @@
     </section>
 
     <!-- §6 Interests -->
-    <section class="section">
+          <section class="section section--with-meta">
+        <div class="section__head">
+        <div class="eyebrow"><span class="mark">§5b</span> Current study · Validating learned reconstruction</div>
+        <h2 class="section__h2">Model performance, stated in detector-performance language.</h2>
+        </div>
+        <div class="section__body">
+        <p>A calibration-transfer study on the public sPHENIX TPCpp-10M spacepoint
+        benchmark and the released FM4NPP foundation-model backbones
+        (4.9M&ndash;175M parameters), plus companion measurements on paired
+        Pythia/Herwig quark&ndash;gluon jet samples and the released Particle
+        Transformer jet tagger. Classifiers are evaluated the way an experiment
+        consumes them: at fixed working points under a signal-loss budget,
+        differentially in occupancy, with event mixing reaching Au+Au-like
+        densities.</p>
+        <p>Headline findings so far: a p+p-calibrated working point is silently
+        violated ~30&times; at central-Au+Au-like density while aggregate metrics
+        barely move; scaling the released backbone ladder buys discrimination but
+        not high-density utility; a head built on 21 physics-motivated, truth-free
+        features doubles that utility where fine-tuning does not; and the direction
+        of score migration &mdash; and therefore the correct remedy &mdash; differs
+        between density and generator shifts. Note in preparation; fully
+        reproducible from public assets.</p>
+        </div>
+        <aside class="section__meta meta-block">
+        <div class="meta-block__label">Assets</div>
+        <dl>
+          <dt>Data</dt><dd>TPCpp-10M · QG pairs</dd>
+          <dt>Models</dt><dd>FM4NPP m1&ndash;m5 · ParT</dd>
+          <dt>Compute</dt><dd>Apple-silicon only</dd>
+          <dt>Status</dt><dd>note in preparation</dd>
+        </dl>
+        </aside>
+      </section>
+
+<section class="section">
       <div class="eyebrow"><span class="mark">§6</span> What I am thinking about</div>
       <h2 class="section__h2">Open questions on my desk.</h2>
       <div class="section__body">

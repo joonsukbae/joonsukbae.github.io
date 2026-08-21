@@ -48,11 +48,11 @@
       </h1>
 
       <p class="hero__sub">
-        Among the most active analyzers in the ALICE jet working group.
+        Regular speaker in the ALICE jet working group since 2023.
         Doctoral work centers on the <span class="var">R</span>-dependent
         cross-section ratio shown below — ALICE Preliminary, presented on
         behalf of ALICE at <em>EPS-HEP 2025</em> as the PWG-JE merge talk.
-        Paper proposal targeted August&nbsp;2026.
+        Paper in preparation for submission within 2026.
       </p>
 
       <div class="hero__avail">
@@ -83,7 +83,7 @@
             <dl>
               <dt>37</dt><dd>O²Physics PRs</dd>
               <dt>18</dt><dd>merged</dd>
-              <dt>50+</dt><dd>PWG/PAG talks</dd>
+              <dt>8</dt><dd>intl. conference contributions</dd>
               <dt>2</dt><dd>ePIC BIC test beams</dd>
             </dl>
           </div>
@@ -119,8 +119,9 @@
 
         <p>The <span class="var">R</span>-dependent ratios shown above are the
         principal result. PWG-JE preliminary; presented on behalf of ALICE at
-        <em>EPS-HEP 2025</em> as the PWG-JE merge talk. Paper proposal targeted
-        August&nbsp;2026.</p>
+        <em>EPS-HEP 2025</em> as the PWG-JE merge talk, followed by a parallel
+        talk and a poster at <em>Hard Probes 2026</em>. Paper in preparation
+        for submission within 2026.</p>
       </div>
       <aside class="section__meta meta-block">
         <div class="meta-block__label">Analysis</div>
@@ -221,6 +222,40 @@
       </aside>
     </section>
 
+    <!-- ====================== §4b ML VALIDATION ====================== -->
+    <section class="section section--with-meta">
+      <div class="section__head">
+        <div class="eyebrow"><span class="mark">§4b</span> Current study · ML validation for detector data</div>
+        <h2 class="section__h2">Testing learned reconstruction<br>the way experiments use it.</h2>
+      </div>
+      <div class="section__body">
+        <p>Since spring 2026 I have been running a calibration-transfer study on
+        the public sPHENIX <a href="https://doi.org/10.5281/zenodo.16970029">TPCpp-10M</a>
+        spacepoint benchmark and the released
+        <a href="https://github.com/FM4NPP/PP_collision">FM4NPP</a> foundation-model
+        backbones (4.9M&ndash;175M parameters) &mdash; evaluating classifiers at fixed
+        working points under a signal-loss budget, differentially in occupancy,
+        with event mixing reaching Au+Au-like track densities.</p>
+
+        <p>A working point calibrated on p+p is silently violated roughly
+        thirtyfold at that density; across the released model ladder,
+        discrimination improves monotonically while high-density background
+        rejection does not move &mdash; and a head built on 21 physics-motivated,
+        truth-free features doubles it. A companion measurement on paired
+        Pythia/Herwig quark&ndash;gluon samples covers the generator-shift axis.
+        A note is in preparation; everything reproduces from public assets.</p>
+      </div>
+      <aside class="section__meta meta-block">
+        <div class="meta-block__label">Setup</div>
+        <dl>
+          <dt>Benchmark</dt><dd>TPCpp-10M (public)</dd>
+          <dt>Backbones</dt><dd>4.9M &rarr; 175M</dd>
+          <dt>Protocol</dt><dd>fixed WP · 1% budget</dd>
+          <dt>Status</dt><dd>note in preparation</dd>
+        </dl>
+      </aside>
+    </section>
+
     <!-- ====================== §5 MENTORING ====================== -->
     <section class="section">
       <div class="eyebrow"><span class="mark">§5</span> Mentoring &amp; community</div>
@@ -296,17 +331,18 @@
     <section class="contact">
       <div>
         <div class="eyebrow" style="margin-bottom: 22px;">Reach me</div>
-        <h2 class="contact__h2">HP2026 in Nashville next week.</h2>
+        <h2 class="contact__h2">Applying for 2027 postdoc positions.</h2>
         <p class="contact__sub">
-          Letters from Prof.&nbsp;Beomkyu&nbsp;Kim (SKKU, advisor) and
-          Prof.&nbsp;Sanghoon&nbsp;Lim (Yonsei, ePIC&nbsp;BIC supervisor) on request.
+          Letters from Prof.&nbsp;Beomkyu&nbsp;Kim (SKKU, advisor),
+          Dr.&nbsp;Jaime&nbsp;Norman (Liverpool, ALICE jets), and
+          Prof.&nbsp;Sanghoon&nbsp;Lim (Yonsei, sPHENIX/ePIC) on request.
           For postdoc inquiries — <em>jbae@cern.ch</em>.
         </p>
       </div>
       <div class="contact__cta">
         <a href="mailto:jbae@cern.ch">jbae@cern.ch</a>
         <a href="/cv/joonsuk-bae-cv.pdf">CV (medium, 3 pp) ↗</a>
-        <a href="/cv/joonsuk-bae-cv-long.pdf">CV (long, 5 pp) ↗</a>
+        <a href="/cv/joonsuk-bae-cv-long.pdf">CV (long, 6 pp) ↗</a>
         <a href="https://inspirehep.net/authors/2117232">INSPIRE-HEP ↗</a>
         <a href="https://orcid.org/0009-0008-4806-8019">ORCID ↗</a>
         <a href="https://github.com/joonsukbae">GitHub ↗</a>
