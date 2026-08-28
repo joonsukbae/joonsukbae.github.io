@@ -7,8 +7,8 @@ Personal homepage for Joonsuk Bae. PhD candidate, Sungkyunkwan University. ALICE
 Hand-rolled static HTML + CSS. No build step. A tiny Python script converts the BibTeX file used by the CV into the publications page.
 
 - Zero runtime dependencies
-- Zero JS on the live site
-- Self-hosted system font stack (Inter / system-ui sans, Newsreader / system serif)
+- No JS beyond a deferred Cloudflare Web Analytics beacon.
+- Self-hosted subset variable woff2: Inter Tight (display), Source Serif 4 (body), JetBrains Mono (labels)
 - Deploys to GitHub Pages directly (`.nojekyll` present)
 
 ## Local development
@@ -59,7 +59,8 @@ cp main.pdf "/Users/js/personal/joonsukbae.github.io/cv/joonsuk-bae-cv.pdf"
 /cv/               CV summary + embedded PDF
 /contact/          contact links
 assets/css/        style.css (single stylesheet)
-assets/img/        portraits, figures
+assets/svg/        plot figures
+assets/img/        OG card, raster figures
 scripts/           build_publications.py
 ```
 
@@ -71,4 +72,12 @@ Off-white paper, near-black ink, a single hanko-red mark used sparingly. Sans-se
 
 Push to GitHub. Repository name `joonsukbae.github.io` triggers GitHub Pages on the default branch. The `.nojekyll` file disables Jekyll processing so paths like `/research/` are served correctly.
 
-Custom domain (planned): `joonsukbae.com`.
+Before pushing, refresh the per-page dates so the sitemap and the footers do not drift. For each
+changed page, take its last commit date and use it for that URL's `<lastmod>` in `sitemap.xml` and
+for the `Last updated` line in that page's footer:
+
+```bash
+git log -1 --format=%ad --date=short -- <file>
+```
+
+Custom domain: `joonsukbae.com` (CNAME committed, Pages configured).
